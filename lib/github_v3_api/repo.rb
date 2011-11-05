@@ -5,7 +5,7 @@ class GitHubV3API
     attr_reader :created_at, :description, :fork, :forks, :has_downloads,
       :has_issues, :has_wiki, :homepage, :html_url, :language, :master_branch,
       :name, :open_issues, :organization, :owner, :parent, :private, :pushed_at,
-      :size, :source, :url, :watchers
+      :size, :source, :url, :watchers, :clone_url, :ssh_url, :git_url
 
     def owner_login
       owner['login']
