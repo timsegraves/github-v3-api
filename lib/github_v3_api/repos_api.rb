@@ -43,5 +43,6 @@ class GitHubV3API
     rescue RestClient::ResourceNotFound
       raise NotFound, "The repository #{user}/#{repo_name} does not exist or is not visible to the user."
     end
+
   end
 end

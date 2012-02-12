@@ -19,6 +19,13 @@ describe GitHubV3API do
     end
   end
 
+  describe '#hooks' do
+    it 'returns an instance of GitHubV3API:HooksAPI' do
+      api = GitHubV3API.new('abcde')
+      api.hooks.should be_kind_of GitHubV3API::HooksAPI
+    end
+  end
+
   describe "#issues" do
     it "returns an instance of GitHubV3API::IssuesAPI" do
       api = GitHubV3API.new('abcde')

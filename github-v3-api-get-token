@@ -17,10 +17,10 @@ unless answer =~ /^y(es)?$/i
   exit(1)
 end
 
-unless ENV['OAUTH_GITHUB_CLIENT_ID'] && ENV['OAUTH_GITHUB_CLIENT_SECRET']
-  raise "Please set the OAUTH_GITHUB_CLIENT_ID and OAUTH_GITHUB_CLIENT_SECRET " \
-    + "environment variables before running this."
-end
+#unless ENV['OAUTH_GITHUB_CLIENT_ID'] && ENV['OAUTH_GITHUB_CLIENT_SECRET']
+#  raise "Please set the OAUTH_GITHUB_CLIENT_ID and OAUTH_GITHUB_CLIENT_SECRET " \
+#    + "environment variables before running this."
+#end
 
 require 'rubygems'
 require 'bundler/setup'
@@ -32,7 +32,7 @@ require 'omniauth'
 enable :sessions
 
 use OmniAuth::Builder do
-  provider :github, ENV['OAUTH_GITHUB_CLIENT_ID'], ENV['OAUTH_GITHUB_CLIENT_SECRET'],
+  provider :github, 'f587dca8b3c0d7667de7', '81d18c055d482ebb53d773a93eb9f8c083b4a542',
     :scope => 'user,repo,gist'
 end
 
