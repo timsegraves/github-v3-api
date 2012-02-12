@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "github-v3-api"
-  s.version = "0.1.0"
+  s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["John Wilger"]
@@ -39,6 +39,8 @@ Gem::Specification.new do |s|
     "lib/github_v3_api/orgs_api.rb",
     "lib/github_v3_api/repo.rb",
     "lib/github_v3_api/repos_api.rb",
+    "lib/github_v3_api/user.rb",
+    "lib/github_v3_api/users_api.rb",
     "spec/github_v3_api_spec.rb",
     "spec/hook_spec.rb",
     "spec/hooks_api_spec.rb",
@@ -48,7 +50,9 @@ Gem::Specification.new do |s|
     "spec/orgs_api_spec.rb",
     "spec/repo_spec.rb",
     "spec/repos_api_spec.rb",
-    "spec/spec_helper.rb"
+    "spec/spec_helper.rb",
+    "spec/user_api_spec.rb",
+    "spec/user_spec.rb"
   ]
   s.homepage = "http://github.com/jwilger/github-v3-api"
   s.licenses = ["MIT"]
