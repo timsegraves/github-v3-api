@@ -5,10 +5,10 @@ describe GitHubV3API::HooksAPI do
     it 'returns all hooks for a given repo' do
       connection = mock(GitHubV3API)
       connection.should_receive(:get).with('/repos/octocat/hello-world/hooks').and_return([:hook_hash1, :hook_hash2])
-      api = GitHubV3API::ReposAPI.new(connection)
-      GitHubV3API::Hook.should_receive(:new).with(api, :hook_hash).and_return(:hook1)
+      api = GitHubV3API::HooksAPI.new(connection)
+      GitHubV3API::Hook.should_receive(:new).with(api, :hook_hash1).and_return(:hook1)
       GitHubV3API::Hook.should_receive(:new).with(api, :hook_hash2).and_return(:hook2)
-      hooks = api.list
+      hooks = api.list('octocat', 'hello-world')
       hooks.should == [:hook1, :hook2]
     end
   end

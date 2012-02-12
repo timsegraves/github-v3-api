@@ -7,6 +7,8 @@ require 'github_v3_api/orgs_api'
 require 'github_v3_api/org'
 require 'github_v3_api/repos_api'
 require 'github_v3_api/repo'
+require 'github_v3_api/hooks_api'
+require 'github_v3_api/hook'
 
 # This is the main entry-point to the GitHub v3 API.
 #
@@ -52,6 +54,14 @@ class GitHubV3API
     ReposAPI.new(self)
   end
 
+  # Entry-point for access to the GitHub Hooks API
+  #
+  # Returns an instance of GitHubV3API::HooksAPI that will use the access_token
+  # associated with this instance.
+  def hooks
+    HooksAPI.new(self)
+  end
+  
   # Entry-point for access to the GitHub Issues API
   #
   # Returns an instance of GitHubV3API::IssuesAPI that will use the access_token

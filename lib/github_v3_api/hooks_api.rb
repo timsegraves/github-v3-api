@@ -41,8 +41,8 @@ class GitHubV3API
     # +user+:: the string ID of the user, e.g. "octocat"
     # +repo_name+:: the string ID of the repository, e.g. "hello-world"
     # +id+:: the integer ID of the hook, e.g. 42
-    def get(user, repo_name, id, params={})
-      hook_data = @connection.get("/repos/#{user}/#{repo_name}/hooks/#{id.to_s}", params)
+    def get(user, repo_name, id)
+      hook_data = @connection.get("/repos/#{user}/#{repo_name}/hooks/#{id.to_s}")
       GitHubV3API::Hook.new_with_all_data(self, hook_data)
     rescue RestClient::ResourceNotFound
       raise NotFound, "The hook #{user}/#{repo_name}/hooks/#{id} does not exist or is not visible to the user."

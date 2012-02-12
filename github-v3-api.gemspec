@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["John Wilger"]
-  s.date = "2011-10-18"
+  s.date = "2012-02-12"
   s.description = "Ponies"
   s.email = "johnwilger@gmail.com"
   s.extra_rdoc_files = [
@@ -31,23 +31,23 @@ Gem::Specification.new do |s|
     "lib/github-v3-api.rb",
     "lib/github_v3_api.rb",
     "lib/github_v3_api/entity.rb",
+    "lib/github_v3_api/hook.rb",
+    "lib/github_v3_api/hooks_api.rb",
     "lib/github_v3_api/issue.rb",
     "lib/github_v3_api/issues_api.rb",
     "lib/github_v3_api/org.rb",
     "lib/github_v3_api/orgs_api.rb",
     "lib/github_v3_api/repo.rb",
     "lib/github_v3_api/repos_api.rb",
-    "lib/github_v3_api/hook.rb",
-    "lib/github_v3_api/hooks_api.rb",
     "spec/github_v3_api_spec.rb",
+    "spec/hook_spec.rb",
+    "spec/hooks_api_spec.rb",
     "spec/issue_spec.rb",
     "spec/issues_api_spec.rb",
     "spec/org_spec.rb",
     "spec/orgs_api_spec.rb",
     "spec/repo_spec.rb",
     "spec/repos_api_spec.rb",
-    "spec/hook_spec.rb",
-    "spec/hooks_api_spec.rb",
     "spec/spec_helper.rb"
   ]
   s.homepage = "http://github.com/jwilger/github-v3-api"
@@ -62,29 +62,32 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<rest-client>, ["~> 1.6.3"])
       s.add_runtime_dependency(%q<json>, ["~> 1.5.3"])
+      s.add_runtime_dependency(%q<rake>, ["= 0.8.7"])
       s.add_development_dependency(%q<rspec>, ["~> 2.3.0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.6.0"])
-      s.add_development_dependency(%q<rcov>, [">= 0"])
+      s.add_development_dependency(%q<simplecov>, [">= 0"])
       s.add_development_dependency(%q<reek>, ["~> 1.2.8"])
       s.add_development_dependency(%q<roodi>, ["~> 2.1.0"])
     else
       s.add_dependency(%q<rest-client>, ["~> 1.6.3"])
       s.add_dependency(%q<json>, ["~> 1.5.3"])
+      s.add_dependency(%q<rake>, ["= 0.8.7"])
       s.add_dependency(%q<rspec>, ["~> 2.3.0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.6.0"])
-      s.add_dependency(%q<rcov>, [">= 0"])
+      s.add_dependency(%q<simplecov>, [">= 0"])
       s.add_dependency(%q<reek>, ["~> 1.2.8"])
       s.add_dependency(%q<roodi>, ["~> 2.1.0"])
     end
   else
     s.add_dependency(%q<rest-client>, ["~> 1.6.3"])
     s.add_dependency(%q<json>, ["~> 1.5.3"])
+    s.add_dependency(%q<rake>, ["= 0.8.7"])
     s.add_dependency(%q<rspec>, ["~> 2.3.0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.6.0"])
-    s.add_dependency(%q<rcov>, [">= 0"])
+    s.add_dependency(%q<simplecov>, [">= 0"])
     s.add_dependency(%q<reek>, ["~> 1.2.8"])
     s.add_dependency(%q<roodi>, ["~> 2.1.0"])
   end
