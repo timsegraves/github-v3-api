@@ -90,6 +90,7 @@ class GitHubV3API
   end
 
   def post(path, params={}) #:nodoc:
+    Rails.logger.info "https://api.github.com" + path + JSON.generate(params).to_s
     result = RestClient.post("https://api.github.com" + path, JSON.generate(params),
                             {:accept => :json,
                              :authorization => "token #{@access_token}"})
