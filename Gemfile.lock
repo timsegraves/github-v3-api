@@ -58,7 +58,6 @@ DEPENDENCIES
   jeweler (~> 1.6.0)
   json (~> 1.5.3)
   omniauth
-  rake (= 0.8.7)
   reek (~> 1.2.8)
   rest-client (~> 1.6.3)
   roodi (~> 2.1.0)
