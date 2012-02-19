@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 gem 'rest-client', '~> 1.6.3'
 gem 'json', '~> 1.5.3'
-gem 'rake', '0.8.7'
+gem 'rake', '~> 0.9.2'
 
 group :development do
   gem "rspec", "~> 2.3.0"
